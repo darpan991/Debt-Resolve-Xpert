@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt Resolve Xpert &#8211; Professional Support for Debt Resolution &amp; Harassment Protection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --green:#2FB84E;
+    --green-dark:#1E7A34;
+    --green-light:#7FE38A;
+    --ink:#0B0F0D;
+    --ink-soft:#1B231D;
+    --paper:#FAFAF7;
+    --line:#E4E6E1;
+    --muted:#5B655C;
+    --red:#C43B2E;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif; color:var(--ink); background:var(--paper); line-height:1.6;}
+  h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif; font-weight:600; letter-spacing:-0.02em;}
+  a{text-decoration:none; color:inherit;}
+  img{display:block;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; background:var(--ink); color:#fff;
+    padding:14px 26px; border-radius:999px; font-weight:600; font-size:15px; border:none; cursor:pointer;
+    transition:transform .18s ease, background .18s ease;
+  }
+  .btn:hover{background:var(--green-dark); transform:translateY(-2px);}
+  .btn.green{background:var(--green);}
+  .btn.green:hover{background:var(--green-dark);}
+
+/* HEADER */
+header{position:sticky; top:0; z-index:50; background:rgba(250,250,247,0.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:30px 24px;}
+.brand{display:flex; align-items:center; gap:10px; font-family:'Poppins'; font-weight:800; font-size:19px;}
+.brand .mark{width:40px; height:40px; display:flex; align-items:center; justify-content:center;}
+.brand .mark img{width: 150px; height: 100px; object-fit:contain;}
+.brand .sub{color:var(--green-dark);}
+.navlinks{display:flex; gap:32px; font-weight:500; font-size:15px;}
+.navlinks a{position:relative; padding:4px 0; color:var(--ink-soft);}
+.navlinks a.active{color:var(--green-dark);}
+.navlinks a.active::after{content:''; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:var(--green);}
+.navcta .btn{padding:11px 22px; font-size:14px;}
+  /* TOP NOTICE */
+  .top-notice{background:var(--ink); color:#fff; text-align:center; padding:12px 16px; font-size:13.5px;}
+  .top-notice b{color:var(--green-light); font-weight:600;}
+
+  /* HERO */
+  .hero{padding:50px 0 60px; background:radial-gradient(600px 300px at 85% -10%, rgba(47,184,78,0.14), transparent 60%), var(--paper);}
+  .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:50px; align-items:stretch;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; color:var(--green-dark); font-weight:600; font-size:13px; letter-spacing:.06em; text-transform:uppercase; background:rgba(47,184,78,0.1); padding:6px 14px; border-radius:999px; margin-bottom:16px; width: fit-content;}
+  .hero h3{font-size:38px; line-height:1.15; margin-bottom:14px;}
+  .hero h3 .focus{color:var(--green-dark);}
+  .hero p.desc{color:var(--muted); font-size:16.5px; max-width:520px; margin-bottom:24px;}
+  .stats-row{display:flex; gap:28px; flex-wrap:wrap; margin:26px 0 8px; align-items:center;}
+  .stats-row .badge{display:flex; flex-direction:column; align-items:flex-start; font-size:13px; color:var(--muted);}
+  .stats-row img{max-width:150px;}
+
+  .hero-mini-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:22px; max-width:480px;}
+  .hero-mini-card{background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; text-align:center; transition:.2s;}
+  .hero-mini-card img{width:100%; height:130px; object-fit:cover;}
+  .hero-mini-card span{display:block; padding:8px 6px; font-size:11px; font-weight:600; color:var(--ink-soft); line-height:1.3;}
+  .hero-mini-card:hover{transform:translateY(-2px); box-shadow:0 8px 18px -10px rgba(11,15,13,0.3);}
+
+  /* FORM */
+  .formcard{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px; box-shadow:0 20px 50px -20px rgba(11,15,13,0.18); max-height:600px; overflow-y:auto;}
+  .formcard::-webkit-scrollbar{width:6px;}
+  .formcard::-webkit-scrollbar-thumb{background:var(--line); border-radius:10px;}
+  .formcard::-webkit-scrollbar-thumb:hover{background:var(--green);}
+  .formcard .form-title{font-size:24px; text-align:center; margin-bottom:6px;}
+  .formcard .form-sub{text-align:center; color:var(--muted); font-size:13.5px; margin-bottom:18px;}
+  .formcard .form-sub b{color:var(--red); display:block; margin-top:6px; font-weight:600;}
+  .field{margin-bottom:14px;}
+  .field label{display:block; font-size:13.5px; font-weight:600; margin-bottom:6px; color:var(--ink-soft);}
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px;
+    font-size:14px; font-family:'Inter'; background:#FBFBF9; color:var(--ink);
+  }
+  .field textarea{resize:vertical; min-height:80px;}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--green); outline-offset:1px;}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .formcard .submit-btn{width:100%; justify-content:center; margin-top:6px; padding:14px; background:var(--green-dark); color:#fff; border-radius:8px; font-weight:600; font-size:15.5px; border:none; cursor:pointer;}
+  .formcard .submit-btn:hover{background:var(--ink);}
+
+  /* LOAN GRID */
+  .loan-grid-section{padding:0 0 50px;}
+  .loan-grid-container{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; max-width:1000px; margin:0 auto;}
+  .loan-card{background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; text-align:center; transition:.3s;}
+  .loan-card img{width:100%; height:170px; object-fit:cover;}
+  .loan-card h4{padding:14px 12px; font-size:15px; font-weight:600; color:var(--ink);}
+  .loan-card:hover{box-shadow:0 10px 26px -14px rgba(11,15,13,0.25); transform:translateY(-3px);}
+
+  /* TRUST */
+  .trust{background:var(--ink); color:#fff; padding:40px 0; text-align:center;}
+  .trust h2{font-size:26px; margin-bottom:26px;}
+  .trust .row{display:flex; justify-content:center; gap:60px; flex-wrap:wrap;}
+  .trust .row b{display:block; font-family:'Poppins'; font-size:32px; color:var(--green-light);}
+  .trust .row span{font-size:13px; color:#C9CFC8;}
+  .redline{text-align:center; color:var(--red); font-weight:600; font-size:14.5px; padding:24px 0;}
+
+  /* SHIELD */
+  .shield{padding:50px 0;}
+  .shield-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
+  .shield h3{font-size:30px; margin-bottom:16px;}
+  .shield p{color:var(--muted); font-size:15px;}
+  .shield img{border-radius:var(--radius); box-shadow:0 20px 50px -20px rgba(11,15,13,0.25);}
+  .center{text-align:center; margin-top:30px;}
+
+  /* SERVICES */
+  .services{padding:50px 0; background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .section-head{text-align:center; max-width:640px; margin:0 auto 40px;}
+  .section-head h3{font-size:30px; margin-bottom:10px;}
+  .section-head p{color:var(--muted); font-size:15.5px;}
+  .svc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .svc-card{border-radius:var(--radius); overflow:hidden; background:var(--paper); border:1px solid var(--line); transition:.2s;}
+  .svc-card img{width:100%; height:190px; object-fit:cover;}
+  .svc-card .content{padding:20px;}
+  .svc-card .icon{width:38px; height:38px; border-radius:9px; background:var(--ink); color:var(--green-light); display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:12px;}
+  .svc-card h5{font-size:17px; margin-bottom:8px;}
+  .svc-card p{color:var(--muted); font-size:13.5px;}
+  .svc-card:hover{transform:translateY(-4px); box-shadow:0 16px 30px -18px rgba(11,15,13,0.25); border-color:var(--green);}
+
+  /* REVIEWS */
+  .reviews{padding:56px 0;}
+  .rev-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .rev-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:22px;}
+  .rev-card .stars{color:#F2A70D; margin-bottom:10px; font-size:14px;}
+  .rev-card p{color:var(--ink-soft); font-size:14px; margin-bottom:14px;}
+  .rev-who b{display:block; font-size:14px;}
+  .rev-who span{color:var(--muted); font-size:12.5px;}
+
+  /* PROCESS */
+  .loan-process{max-width:1000px; margin:auto; padding:60px 24px;}
+  .loan-process h6{text-align:center; color:var(--green-dark); letter-spacing:2px; font-weight:600; margin-bottom:10px; font-size:13px;}
+  .loan-process h2{text-align:center; font-size:30px; margin-bottom:60px;}
+  .timeline{position:relative; margin-top:30px;}
+  .timeline::before{content:''; position:absolute; left:24px; top:0; width:2px; height:100%; background:var(--line);}
+  .timeline-item{display:flex; align-items:flex-start; margin-bottom:50px; position:relative;}
+  .timeline-number{min-width:48px; height:48px; background:var(--green); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:17px; margin-right:26px; z-index:1;}
+  .timeline-content h3{font-size:19px; margin-bottom:8px;}
+  .timeline-content p{color:var(--muted); font-size:14.5px;}
+
+  /* BENEFITS */
+  .benefits{padding:50px 0; background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .benefit-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .benefit{text-align:center; padding:10px;}
+  .benefit .icon{width:54px; height:54px; border-radius:14px; background:rgba(47,184,78,0.12); color:var(--green-dark); display:flex; align-items:center; justify-content:center; font-size:22px; margin:0 auto 14px;}
+  .benefit h5{font-size:16px; margin-bottom:8px;}
+  .benefit p{color:var(--muted); font-size:13.5px;}
+
+  /* FAQ */
+  .faq-container{max-width:900px; margin:60px auto; padding:0 24px;}
+  .faq-header{text-align:center; margin-bottom:40px;}
+  .faq-title{font-size:30px; color:var(--green-dark);}
+  .faq-item{background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:14px; overflow:hidden; transition:.3s;}
+  .faq-question{padding:19px 22px; font-size:15px; font-weight:600; cursor:pointer; display:flex; justify-content:space-between; align-items:center;}
+  .faq-question i{color:var(--green-dark); transition:.3s;}
+  .faq-item.active .faq-question i{transform:rotate(180deg);}
+  .faq-answer{max-height:0; overflow:hidden; transition:max-height .3s ease; color:var(--muted); font-size:14.5px;}
+  .faq-item.active .faq-answer{padding:0 22px 22px;}
+
+  /* CONSULTANT BAR */
+  .fixed-consultant-bar{position:fixed; bottom:0; left:0; width:100%; background:var(--green-dark); text-align:center; z-index:999;}
+  .fixed-consultant-bar a{display:block; padding:16px 0; color:#fff !important; font-size:16px; font-weight:600;}
+  body{padding-bottom:64px;}
+
+  /* WHATSAPP */
+  .whatsapp-float{position:fixed; right:20px; bottom:90px; width:54px; height:54px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 5px 15px rgba(0,0,0,0.3); z-index:998; color:#fff; font-size:24px;}
+
+  /* FOOTER */
+  footer{background:var(--ink); color:#C9CFC8; padding:36px 0 0;}
+  .foot-top{display:flex; justify-content:space-between; align-items:center; padding:20px 24px; flex-wrap:wrap; gap:14px; border-bottom:1px solid rgba(255,255,255,0.1); max-width:1180px; margin:0 auto;}
+  .foot-top h2{color:#fff; font-size:16px; font-weight:600;}
+  .foot-links{display:flex; gap:20px; font-size:13.5px;}
+  .foot-links a:hover{color:var(--green-light);}
+  .foot-social{display:flex; gap:14px; font-size:14px;}
+  .foot-social a{width:32px; height:32px; border-radius:50%; background:rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center;}
+  .foot-social a:hover{background:var(--green);}
+  .disclaimer{font-size:11.5px; color:#6F786F; max-width:1180px; margin:0 auto; padding:20px 24px; line-height:1.7;}
+
+  @media (max-width: 900px){
+    .navlinks{display:none;}
+    .hero-grid, .shield-grid{grid-template-columns:1fr;}
+    .formcard{max-height:none;}
+    .hero-mini-grid{max-width:100%;}
+    .trust .row{gap:26px;}
+    .svc-grid, .rev-grid, .loan-grid-container{grid-template-columns:1fr;}
+    .benefit-grid{grid-template-columns:1fr 1fr;}
+    .row2{grid-template-columns:1fr;}
+    .hero h3{font-size:28px;}
+  }
+
+  @media (max-width: 768px){
+    .brand .mark img {
+    margin-left: 65px;
+  }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-notice">We do not provide Loans. We only help in Loan Settlement — <b>100% legal &amp; confidential support.</b></div>
+
+<header>
+  <nav class="nav wrap">
+    <a href="#" class="brand">
+      <span class="mark"><img src="assets/images/logo.png" alt="Debt Resolve Xpert logo"></span>
+    </a>
+    <div class="navlinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#ClientReviews">Client Reviews</a>
+      <a href="#Howitworks">How it works</a>
+      <a href="#WhyChooseUs">Why Choose Us</a>
+      <a href="#Services">Services</a>
+      <a href="#about">About Us</a>
+    </div>
+    <div class="navcta">
+      <a href="https://api.whatsapp.com/send/?phone=91XXXXXXXXXX&text&type=phone_number&app_absent=0" class="btn green" target="_blank">Get Support <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div style="display:flex; flex-direction:column; justify-content:center;">
+      <span class="eyebrow">Legal Solution Panel</span>
+      <h3>Stop Debt <span class="focus">Harassment.</span><br>Regain Peace Legally</h3>
+      <p class="desc">Professional legal &amp; settlement help for people being harassed by recovery agents and legal threats.</p>
+
+      <div class="hero-mini-grid">
+        <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=300&q=80" alt="Credit card loans"><span>Credit card loans piling up?</span></div>
+        <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=300&q=80" alt="Unable to pay EMIs"><span>Unable to pay your Loans EMIs?</span></div>
+        <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&q=80" alt="High interest trap"><span>Falling into high interest trap?</span></div>
+        <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=300&q=80" alt="Harassed by recovery agents"><span>Harassed by Loan Recovery Agents?</span></div>
+        <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&q=80" alt="Enroll with us"><span>Enroll with us</span></div>
+        <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=300&q=80" alt="Debt free life"><span>Live a Debt free Life!</span></div>
+      </div>
+    </div>
+
+    <div class="formcard" id="form">
+      <div class="form-title">Contact Our Experts Now</div>
+      <div class="form-sub">Submit the details below to get a call back.
+        <b>Note: We do not provide any loans. We only assist in loan resolution.</b>
+      </div>
+      <form onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you within 24 hours.');">
+        <div class="field"><label>Full Name*</label><input type="text" placeholder="Enter your name" required></div>
+        <div class="field"><label>Mobile Number*</label><input type="tel" placeholder="Enter 10 digit mobile number" required></div>
+        <div class="field"><label>Email ID*</label><input type="email" placeholder="Enter your email" required></div>
+        <div class="field"><label>City*</label>
+          <select required><option value="">Select City</option><option>Delhi NCR</option><option>Mumbai</option><option>Pune</option><option>Bengaluru</option><option>Chennai</option><option>Hyderabad</option><option>Kolkata</option><option>Ahemdabad</option><option>Other</option></select>
+        </div>
+        <div class="field"><label>Employment Status*</label>
+          <select required><option value="">Select Employment Status</option><option>Not Employed</option><option>Working as a Salaried Employee</option><option>Self Employed/Small Business</option><option>Business With More Than 10 Employees</option><option>Other</option></select>
+        </div>
+        <div class="field"><label>Credit Card Dues*</label>
+          <select required><option value="">Select Dues</option><option>Rs. 0-3 Lac</option><option>Rs. 3-10 Lac</option><option>Rs. 10-25 Lac</option><option>Rs. 25-50 Lac</option><option>Rs. 50 Lac-1 Cr</option><option>More than 1 Cr</option></select>
+        </div>
+        <div class="field"><label>Total Personal Loan Amount*</label>
+          <select required><option value="">Select Option</option><option>Rs. 0-3 Lac</option><option>Rs. 3-10 Lac</option><option>Rs. 10-25 Lac</option><option>Rs. 25-50 Lac</option><option>Rs. 50 Lac-1 Cr</option><option>More than 1 Cr</option></select>
+        </div>
+        <div class="field"><label>Language*</label>
+          <select required><option value="">Select Language</option><option>English</option><option>Hindi</option><option>Bengali</option><option>Odia</option><option>Assamese</option><option>Malyalam</option></select>
+        </div>
+        <div class="field"><label>Your Queries*</label><textarea placeholder="Enter your queries here" required></textarea></div>
+        <button class="submit-btn" type="submit">Submit Form</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<section class="trust" id="WhyChooseUs">
+  <div class="wrap">
+    <h2>Why Clients Trust Us?</h2>
+    <div class="row">
+      <div><b>5,000+</b><span>Loans Cleared</span></div>
+      <div><b>20Cr+</b><span>Debt Resolved</span></div>
+      <div><b>8,000+</b><span>Harassment Calls Handled</span></div>
+      <div><b>24 Hours</b><span>Response Time</span></div>
+    </div>
+  </div>
+</section>
+<!-- <p class="redline">We do not provide loans — we only assist with loan resolution</p> -->
+
+<section class="shield">
+  <div class="wrap shield-grid">
+    <div>
+      <h3>Your Legal Shield Against Debt Harassment</h3>
+      <p>Our legal and financial experts specialize in resolving debt issues, rebuilding credit, and protecting your legal rights. We handle loan defaults and recovery agent harassment cases. We at Debt Resolve Xpert provide highly qualified advocates specializing in debt resolution who deliver tailored legal support to stop harassment and achieve effective outcomes when you face genuine financial difficulties.</p>
+      <div class="center" style="text-align:left; margin-top:24px;"><a href="#form" class="btn green">Get Callback from Our Experts <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+    <div><img src="assets/images/Your Legal Shield Against Debt Harassment.png" alt="Legal consultation" style="height: 350px; width: 550;"></div>
+  </div>
+</section>
+
+<section class="services" id="Services">
+  <div class="wrap">
+    <div class="section-head">
+      <h3>Our Services</h3>
+      <p>We provide confidential, professional, and effective assistance to help you overcome challenges and protect your rights.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Cheque Bounce Consultation">
+        <div class="content"><div class="icon"><i class="fas fa-file-signature"></i></div><h5>Cheque Bounce Consultation</h5><p>Expert legal guidance for cheque bounce matters under applicable laws. We assist in notice drafting, case handling, and protecting your financial and legal interests effectively.</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=500&q=80" alt="Arbitration and Mediation">
+        <div class="content"><div class="icon"><i class="fas fa-balance-scale"></i></div><h5>Arbitration &amp; Mediation</h5><p>Resolve disputes through structured negotiation and legal mediation. Our experts represent your interests to achieve fair settlements without prolonged litigation.</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=500&q=80" alt="Anti-Harassment Services">
+        <div class="content"><div class="icon"><i class="fas fa-shield-alt"></i></div><h5>Anti-Harassment Services</h5><p>Legal support to stop unlawful recovery calls and intimidation. We ensure your rights are protected while addressing lender concerns through proper legal channels.</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80" alt="Credit Card and Personal Loan Issue">
+        <div class="content"><div class="icon"><i class="fas fa-credit-card"></i></div><h5>Credit Card &amp; Personal Loan Issue</h5><p>Professional assistance for defaults, settlements, and repayment disputes. We help reduce financial pressure while safeguarding your legal standing.</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&q=80" alt="Business Loan Issue">
+        <div class="content"><div class="icon"><i class="fas fa-building"></i></div><h5>Business Loan Issue</h5><p>Strategic legal support for business loan defaults and recovery disputes. We work toward practical solutions that protect your operations and reputation.</p></div>
+      </div>
+      <div class="svc-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Credit Rebuild Program">
+        <div class="content"><div class="icon"><i class="fas fa-chart-line"></i></div><h5>Credit Rebuild Program</h5><p>Structured guidance to improve credit profile after settlement. We help you rebuild financial credibility with planned legal and financial corrective steps.</p></div>
+      </div>
+    </div>
+    <div class="center"><a href="#form" class="btn green">Get Callback from Our Experts <i class="fas fa-arrow-right"></i></a></div>
+  </div>
+</section>
+
+<section class="reviews" id="ClientReviews">
+  <div class="wrap">
+    <div class="section-head"><h3>Client Reviews</h3></div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 4.5/5</div>
+        <p>"I was under constant stress because of continuous calls &amp; threats from loan agents. After joining Debt Resolve Xpert, things finally calmed down. They handled everything professionally. I can sleep peacefully now."</p>
+        <div class="rev-who"><b>Vinod Paladi</b><span>Hyderabad</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 5/5</div>
+        <p>"I had multiple personal loans and was feeling trapped. The Debt Resolve Xpert team guided me, negotiated with lenders, and helped me manage payments without harassment."</p>
+        <div class="rev-who"><b>Abid Hussain Ansari</b><span>Jharkhand</span></div>
+      </div>
+      <div class="rev-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 4.7/5</div>
+        <p>"Recovery agents were calling my family and office. I felt humiliated and scared. Debt Resolve Xpert helped me take control legally. I'm grateful for their calm guidance."</p>
+        <div class="rev-who"><b>MD Kashif Fairoze</b><span>Bangalore</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="Howitworks">
+  <div class="loan-process">
+    <h6>SETTLEMENT PROCESS</h6>
+    <h2>How Does Loan Resolution Work?</h2>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-number">1</div><div class="timeline-content"><h3>Fill the Form</h3><p>Complete our simple registration form with your basic loan details. For priority assistance, pay ₹49 and our team will connect with you within 12–24 hours.</p></div></div>
+      <div class="timeline-item"><div class="timeline-number">2</div><div class="timeline-content"><h3>Receive a Callback</h3><p>Our legal team will contact you to understand your situation and review your case in detail.</p></div></div>
+      <div class="timeline-item"><div class="timeline-number">3</div><div class="timeline-content"><h3>Personalized Consultation</h3><p>We carefully assess your financial condition and design a tailored debt resolution strategy suited to your needs.</p></div></div>
+      <div class="timeline-item"><div class="timeline-number">4</div><div class="timeline-content"><h3>Harassment Protection</h3><p>We take over lender communication and provide immediate relief from recovery agent harassment.</p></div></div>
+      <div class="timeline-item"><div class="timeline-number">5</div><div class="timeline-content"><h3>Strategic Negotiation</h3><p>Our team negotiates directly with banks and lenders to pursue a lawful and practical settlement.</p></div></div>
+      <div class="timeline-item"><div class="timeline-number">6</div><div class="timeline-content"><h3>Debt Resolved</h3><p>Finalize the settlement, clear your dues, and move forward toward a stable, debt-free future.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="center" style="padding-bottom:40px;"><a href="#form" class="btn green">Get Callback from Our Experts <i class="fas fa-arrow-right"></i></a></div>
+
+<section class="benefits">
+  <div class="wrap">
+    <div class="section-head"><h3>Benefits of Working With Us</h3></div>
+    <div class="benefit-grid">
+      <div class="benefit"><div class="icon"><i class="fas fa-rocket"></i></div><h5>Get Legal Help</h5><p>Receive professional legal guidance and protection throughout the loan settlement and resolution process.</p></div>
+      <div class="benefit"><div class="icon"><i class="fas fa-box"></i></div><h5>Pay EMI at Your Convenience</h5><p>Structured repayment plans designed around your income, ensuring affordability and financial stability.</p></div>
+      <div class="benefit"><div class="icon"><i class="fas fa-bullseye"></i></div><h5>Reduce Total Debt</h5><p>Our experts negotiate with banks to reduce your overall payable debt legally and responsibly.</p></div>
+      <div class="benefit"><div class="icon"><i class="fas fa-tools"></i></div><h5>Stop Agent Harassment</h5><p>We take over all communication and protect you from recovery calls and undue pressure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="shield" id="about" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" style="text-align:left; max-width:900px; margin-bottom:0;">
+      <h3>Leading Debt <span style="color:var(--green-dark);">Relief and Settlement</span> Company</h3>
+      <p style="text-align:left;">Debt Resolve Xpert, under Legal Solution Panel, is a prominent fintech-legal company specialising in loan settlement and debt settlement services. Our advanced solutions are designed to assist individuals facing financial challenges to overcome the burden of debt traps. With Debt Resolve Xpert, clients can rely on our expert loan settlement consultants to negotiate on their behalf, providing a path to financial freedom.<br><br>Debt settlement is a common practice in developed countries like the USA and Europe but is not often practiced in India. In this scenario, unfortunate borrowers suffer a great loss of money and peace of mind due to non-payment of EMIs — and that's exactly where we step in.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:44px 0; background:var(--paper);">
+  <div class="wrap">
+    <h4 style="text-align:center; font-size:20px; margin-bottom:26px; color:var(--ink-soft);">In the <span style="color:var(--green-dark);">Media</span></h4>
+    <div style="display:flex; justify-content:center; align-items:center; gap:40px; flex-wrap:wrap; opacity:0.75;">
+      <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=220&q=80" alt="media logo" style="max-width:110px;">
+      <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=220&q=80" alt="media logo" style="max-width:110px;">
+      <img src="https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=220&q=80" alt="media logo" style="max-width:110px;">
+      <img src="https://images.unsplash.com/photo-1614028674026-a65e31bfd27c?w=220&q=80" alt="media logo" style="max-width:110px;">
+      <img src="https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=220&q=80" alt="media logo" style="max-width:110px;">
+      <img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=220&q=80" alt="media logo" style="max-width:110px;">
+    </div>
+  </div>
+</section>
+
+<div class="faq-container">
+  <div class="faq-header"><h3 class="faq-title">Frequently Asked Questions</h3></div>
+  <div class="faq-item">
+    <div class="faq-question"><span>What exactly is debt settlement, and how can it help me?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>Debt settlement is a process of negotiating with creditors to resolve an outstanding debt for a reduced amount. This involves reaching an agreement where a portion of the original debt is paid, rather than the full sum owed. The primary objective is to significantly decrease the total debt burden, making repayment more achievable. This strategy is typically applied to unsecured debts, including personal loans, credit card debt, and medical bills, providing a defined pathway to financial resolution.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>How does a One Time Settlement (OTS) differ from other debt resolution methods?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>A One Time Settlement (OTS) is a debt resolution strategy where you agree to pay your creditor a single, reduced lump-sum amount, which is less than the total outstanding debt. The core benefit of an OTS is immediate and complete closure of the loan account, often with significant savings. It's ideal if you have access to funds to pay off the reduced amount quickly. In contrast, a Term Settlement involves negotiating a structured payment plan where you pay reduced, affordable installments over an agreed period to clear your debt.<br><br><b>Key Difference:</b><br>• OTS: One lump-sum payment for instant closure and maximum debt reduction.<br>• Term Settlement: Multiple, smaller payments over time for ongoing affordability and gradual debt resolution.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>How does "foreclosure" relate to debt settlement, and what should I know?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>Loan foreclosure is the process of completely repaying your outstanding loan before the scheduled tenure ends. This includes paying the remaining principal along with any applicable interest and prepayment charges. Once foreclosure is completed, the loan account is officially closed, and you no longer owe anything to the lender.<br><br><b>Key differences:</b><br>• Foreclosure: Paying the full remaining loan amount to close early; generally does not impact your credit score.<br>• Settlement: Negotiating to pay a reduced amount, typically due to financial hardship; may affect your credit score.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>Is loan settlement legal in India?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>Yes, loan settlement is a completely legal process in India, recognized under the Indian Contract Act and supported by RBI guidelines for handling non-performing assets (NPAs). It is a mutually agreed-upon arrangement between a borrower and lender to close a loan account for a reduced amount, typically when the borrower faces genuine financial distress.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>What is the Difference Between Mediation and Arbitration?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>Arbitration and mediation are both alternative dispute resolution (ADR) methods, but they differ primarily in outcome bindingness and the role of the third party. Arbitration is a formal process where an arbitrator makes a legally binding decision. Mediation is informal, collaborative, and non-binding, with a mediator assisting parties to reach a voluntary settlement.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>What happens in a cheque bounce case?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>If a cheque bounces due to insufficient funds, the drawer can be held criminally liable under Section 138 of the Negotiable Instruments Act. The drawer can be punished with a fine of up to twice the cheque amount, imprisonment for up to two years, or both.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-question"><span>What is loan settlement, and how does it work?</span><i class="fas fa-chevron-down"></i></div>
+    <div class="faq-answer"><p>Loan settlement is the process by which a borrower and lender agree on a final, reduced payment amount to close or resolve an outstanding loan. Typically, this happens when the borrower is in financial distress and unable to pay off the full loan balance.<br><br><b>Here's how it works:</b><br>1. The borrower (or a representative like a debt settlement company) negotiates with the lender for a lower payoff amount.<br>2. The lender may accept this reduced amount to close the loan and forgive the rest of the debt.<br>3. The borrower pays the agreed-upon settlement amount, often in one lump sum or through term settlement over 3 to 6 months.<br>4. The remaining debt is forgiven, but this can negatively impact the borrower's credit score.</p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-top">
+    <h2>© Legal Solution Panel (Debt Resolve Xpert) All Rights Reserved.</h2>
+    <div class="foot-links">
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="foot-social">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <p class="disclaimer">Loan settlement is the discretion of the respective lenders, and only they are authorized to issue settlement letters. Our role is limited to providing legal and procedural support, and we do not have the authority to issue settlement letters. Loan settlement should be considered only in cases of genuine financial hardship where repayment of EMIs is not feasible. Clients are strongly encouraged to explore all possible options to meet their repayment obligations to lenders before opting for loan settlement.</p>
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<div class="fixed-consultant-bar"><a href="#form">Get Consultant</a></div>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q=>{
+    q.addEventListener('click', ()=>{
+      const item = q.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('active');
+        i.querySelector('.faq-answer').style.maxHeight = null;
+      });
+      if(!isActive){
+        item.classList.add('active');
+        item.querySelector('.faq-answer').style.maxHeight = item.querySelector('.faq-answer').scrollHeight + 40 + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
