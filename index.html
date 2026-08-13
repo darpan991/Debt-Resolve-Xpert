@@ -4,906 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Debt Resolve Xpert – Stop Debt Harassment &amp; Get Legal Support</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        /* ── root ── */
-        :root {
-            --green: #2FB84E;
-            --green-dark: #1E7A34;
-            --green-light: #7FE38A;
-            --ink: #0B0F0D;
-            --ink-soft: #1B231D;
-            --paper: #FAFAF7;
-            --line: #E4E6E1;
-            --muted: #5B655C;
-            --red: #C43B2E;
-            --radius: 14px;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--ink);
-            background: var(--paper);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        img {
-            display: block;
-            max-width: 100%;
-        }
-        .wrap {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--ink);
-            color: #fff;
-            padding: 14px 26px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            transition: transform .18s ease, background .18s ease;
-        }
-        .btn:hover {
-            background: var(--green-dark);
-            transform: translateY(-2px);
-        }
-        .btn.green {
-            background: var(--green);
-        }
-        .btn.green:hover {
-            background: var(--green-dark);
-        }
 
-        /* ── header ── */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(250, 250, 247, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--line);
-        }
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 24px;
-            position: relative;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Poppins';
-            font-weight: 800;
-            font-size: 19px;
-        }
-        .brand .mark {
-            width: auto;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0;
-            overflow: visible;
-        }
-        .brand .mark img {
-            width: 100px;
-            height: auto;
-            max-height: 130px;
-            object-fit: contain;
-            border-radius: 0;
-        }
-        .brand .sub {
-            color: var(--green-dark);
-        }
-        .navlinks {
-            display: flex;
-            gap: 32px;
-            font-weight: 500;
-            font-size: 15px;
-        }
-        .navlinks a {
-            position: relative;
-            padding: 4px 0;
-            color: var(--ink-soft);
-        }
-        .navlinks a.active {
-            color: var(--green-dark);
-        }
-        .navlinks a.active::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -4px;
-            width: 100%;
-            height: 2px;
-            background: var(--green);
-        }
-        .navcta .btn {
-            padding: 11px 22px;
-            font-size: 14px;
-        }
-
-        /* hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            cursor: pointer;
-            z-index: 60;
-        }
-        .hamburger span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: var(--ink);
-            transition: transform .25s ease, opacity .25s ease;
-        }
-        .hamburger.open span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-        .hamburger.open span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.open span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background: #fff;
-            border-top: 1px solid var(--line);
-            padding: 10px 24px 20px;
-        }
-        .mobile-menu a {
-            padding: 12px 0;
-            font-size: 15.5px;
-            font-weight: 500;
-            color: var(--ink-soft);
-            border-bottom: 1px solid var(--line);
-        }
-        .mobile-menu a:last-of-type {
-            border-bottom: none;
-        }
-        .mobile-menu.open {
-            display: flex;
-        }
-
-        /* ── top notice ── */
-        .top-notice {
-            background: var(--ink);
-            color: #fff;
-            text-align: center;
-            padding: 12px 16px;
-            font-size: 13.5px;
-        }
-        .top-notice b {
-            color: var(--green-light);
-            font-weight: 600;
-        }
-
-        /* ── hero ── */
-        .hero {
-            padding: 30px 0 60px;
-            background: radial-gradient(600px 300px at 85% -10%, rgba(47, 184, 78, 0.14), transparent 60%), var(--paper);
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr 0.95fr;
-            gap: 50px;
-            align-items: stretch;
-        }
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--green-dark);
-            font-weight: 600;
-            font-size: 13px;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            background: rgba(47, 184, 78, 0.1);
-            padding: 6px 14px;
-            border-radius: 999px;
-            margin-bottom: 16px;
-            width: fit-content;
-        }
-        .hero h3 {
-            font-size: 38px;
-            line-height: 1.15;
-            margin-bottom: 14px;
-        }
-        .hero h3 .focus {
-            color: var(--green-dark);
-        }
-        .hero p.desc {
-            color: var(--muted);
-            font-size: 16.5px;
-            max-width: 520px;
-            margin-bottom: 24px;
-        }
-        .stats-row {
-            display: flex;
-            gap: 28px;
-            flex-wrap: wrap;
-            margin: 26px 0 8px;
-            align-items: center;
-        }
-        .stats-row .badge {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            font-size: 13px;
-            color: var(--muted);
-        }
-        .stats-row img {
-            max-width: 150px;
-        }
-
-        .hero-mini-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 22px;
-            max-width: 480px;
-        }
-        .hero-mini-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: .2s;
-        }
-        .hero-mini-card img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-        }
-        .hero-mini-card span {
-            display: block;
-            padding: 8px 6px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--ink-soft);
-            line-height: 1.3;
-        }
-        .hero-mini-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px -10px rgba(11, 15, 13, 0.3);
-        }
-
-        /* ── form ── */
-        .formcard {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 28px;
-            box-shadow: 0 20px 50px -20px rgba(11, 15, 13, 0.18);
-            max-height: 600px;
-            overflow-y: auto;
-        }
-        .formcard::-webkit-scrollbar {
-            width: 6px;
-        }
-        .formcard::-webkit-scrollbar-thumb {
-            background: var(--line);
-            border-radius: 10px;
-        }
-        .formcard::-webkit-scrollbar-thumb:hover {
-            background: var(--green);
-        }
-        .formcard .form-title {
-            font-size: 24px;
-            text-align: center;
-            margin-bottom: 6px;
-        }
-        .formcard .form-sub {
-            text-align: center;
-            color: var(--muted);
-            font-size: 13.5px;
-            margin-bottom: 18px;
-        }
-        .formcard .form-sub b {
-            color: var(--red);
-            display: block;
-            margin-top: 6px;
-            font-weight: 600;
-        }
-        .field {
-            margin-bottom: 14px;
-        }
-        .field label {
-            display: block;
-            font-size: 13.5px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--ink-soft);
-        }
-        .field input,
-        .field select,
-        .field textarea {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid var(--line);
-            border-radius: 8px;
-            font-size: 14px;
-            font-family: 'Inter';
-            background: #FBFBF9;
-            color: var(--ink);
-        }
-        .field textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-            outline: 2px solid var(--green);
-            outline-offset: 1px;
-        }
-        .row2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-        .formcard .submit-btn {
-            width: 100%;
-            justify-content: center;
-            margin-top: 6px;
-            padding: 14px;
-            background: var(--green-dark);
-            color: #fff;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 15.5px;
-            border: none;
-            cursor: pointer;
-        }
-        .formcard .submit-btn:hover {
-            background: var(--ink);
-        }
-
-        /* ── loan grid ── */
-        .loan-grid-section {
-            padding: 0 0 50px;
-        }
-        .loan-grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .loan-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            overflow: hidden;
-            text-align: center;
-            transition: .3s;
-        }
-        .loan-card img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-        }
-        .loan-card h4 {
-            padding: 14px 12px;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--ink);
-        }
-        .loan-card:hover {
-            box-shadow: 0 10px 26px -14px rgba(11, 15, 13, 0.25);
-            transform: translateY(-3px);
-        }
-
-        /* ── trust ── */
-        .trust {
-            background: var(--ink);
-            color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .trust h2 {
-            font-size: 26px;
-            margin-bottom: 26px;
-        }
-        .trust .row {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-        .trust .row b {
-            display: block;
-            font-family: 'Poppins';
-            font-size: 32px;
-            color: var(--green-light);
-        }
-        .trust .row span {
-            font-size: 13px;
-            color: #C9CFC8;
-        }
-        .redline {
-            text-align: center;
-            color: var(--red);
-            font-weight: 600;
-            font-size: 14.5px;
-            padding: 24px 0;
-        }
-
-        /* ── shield ── */
-        .shield {
-            padding: 50px 0;
-        }
-        .shield-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        .shield h3 {
-            font-size: 30px;
-            margin-bottom: 16px;
-        }
-        .shield p {
-            color: var(--muted);
-            font-size: 15px;
-        }
-        .shield img {
-            width: 100%;
-            height: auto;
-            max-width: 550px;
-            border-radius: var(--radius);
-            box-shadow: 0 20px 50px -20px rgba(11, 15, 13, 0.25);
-            margin: 0 auto;
-        }
-        .center {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        /* ── services ── */
-        .services {
-            padding: 50px 0;
-            background: #fff;
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-        .section-head {
-            text-align: center;
-            max-width: 640px;
-            margin: 0 auto 40px;
-        }
-        .section-head h3 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-        .section-head p {
-            color: var(--muted);
-            font-size: 15.5px;
-        }
-        .svc-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-        .svc-card {
-            border-radius: var(--radius);
-            overflow: hidden;
-            background: var(--paper);
-            border: 1px solid var(--line);
-            transition: .2s;
-        }
-        .svc-card img {
-            width: 100%;
-            height: 190px;
-            object-fit: cover;
-        }
-        .svc-card .content {
-            padding: 20px;
-        }
-        .svc-card .icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 9px;
-            background: var(--ink);
-            color: var(--green-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            margin-bottom: 12px;
-        }
-        .svc-card h5 {
-            font-size: 17px;
-            margin-bottom: 8px;
-        }
-        .svc-card p {
-            color: var(--muted);
-            font-size: 13.5px;
-        }
-        .svc-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 30px -18px rgba(11, 15, 13, 0.25);
-            border-color: var(--green);
-        }
-
-        /* ── reviews ── */
-        .reviews {
-            padding: 56px 0;
-        }
-        .rev-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .rev-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 22px;
-        }
-        .rev-card .stars {
-            color: #F2A70D;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .rev-card p {
-            color: var(--ink-soft);
-            font-size: 14px;
-            margin-bottom: 14px;
-        }
-        .rev-who b {
-            display: block;
-            font-size: 14px;
-        }
-        .rev-who span {
-            color: var(--muted);
-            font-size: 12.5px;
-        }
-
-        /* ── process ── */
-        .loan-process {
-            max-width: 1000px;
-            margin: auto;
-            padding: 60px 24px;
-        }
-        .loan-process h6 {
-            text-align: center;
-            color: var(--green-dark);
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 13px;
-        }
-        .loan-process h2 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 60px;
-        }
-        .timeline {
-            position: relative;
-            margin-top: 30px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: var(--line);
-        }
-        .timeline-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        .timeline-number {
-            min-width: 48px;
-            height: 48px;
-            background: var(--green);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 17px;
-            margin-right: 26px;
-            z-index: 1;
-        }
-        .timeline-content h3 {
-            font-size: 19px;
-            margin-bottom: 8px;
-        }
-        .timeline-content p {
-            color: var(--muted);
-            font-size: 14.5px;
-        }
-
-        /* ── benefits ── */
-        .benefits {
-            padding: 50px 0;
-            background: #fff;
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line);
-        }
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-        .benefit {
-            text-align: center;
-            padding: 10px;
-        }
-        .benefit .icon {
-            width: 54px;
-            height: 54px;
-            border-radius: 14px;
-            background: rgba(47, 184, 78, 0.12);
-            color: var(--green-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            margin: 0 auto 14px;
-        }
-        .benefit h5 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-        .benefit p {
-            color: var(--muted);
-            font-size: 13.5px;
-        }
-
-        /* ── faq ── */
-        .faq-container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 24px;
-        }
-        .faq-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .faq-title {
-            font-size: 30px;
-            color: var(--green-dark);
-        }
-        .faq-item {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            margin-bottom: 14px;
-            overflow: hidden;
-            transition: .3s;
-        }
-        .faq-question {
-            padding: 19px 22px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-question i {
-            color: var(--green-dark);
-            transition: .3s;
-        }
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height .3s ease;
-            color: var(--muted);
-            font-size: 14.5px;
-        }
-        .faq-item.active .faq-answer {
-            padding: 0 22px 22px;
-        }
-
-        /* ── consultant bar ── */
-        .fixed-consultant-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--green-dark);
-            text-align: center;
-            z-index: 999;
-        }
-        .fixed-consultant-bar a {
-            display: block;
-            padding: 16px 0;
-            color: #fff !important;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        body {
-            padding-bottom: 64px;
-        }
-
-        /* ── whatsapp ── */
-        .whatsapp-float {
-            position: fixed;
-            right: 20px;
-            bottom: 90px;
-            width: 54px;
-            height: 54px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 998;
-            color: #fff;
-            font-size: 24px;
-        }
-
-        /* ── footer ── */
-        footer {
-            background: var(--ink);
-            color: #C9CFC8;
-            padding: 36px 0 0;
-        }
-        .foot-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 24px;
-            flex-wrap: wrap;
-            gap: 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 1180px;
-            margin: 0 auto;
-        }
-        .foot-top h2 {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        .foot-links {
-            display: flex;
-            gap: 20px;
-            font-size: 13.5px;
-        }
-        .foot-links a:hover {
-            color: var(--green-light);
-        }
-        .foot-social {
-            display: flex;
-            gap: 14px;
-            font-size: 14px;
-        }
-        .foot-social a {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .foot-social a:hover {
-            background: var(--green);
-        }
-        .disclaimer {
-            font-size: 11.5px;
-            color: #6F786F;
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 20px 24px;
-            line-height: 1.7;
-        }
-
-        /* ── responsive ── */
-        @media (max-width: 900px) {
-            .navlinks {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hero-grid,
-            .shield-grid {
-                grid-template-columns: 1fr;
-            }
-            .formcard {
-                max-height: none;
-            }
-            .hero-mini-grid {
-                max-width: 100%;
-            }
-            .trust .row {
-                gap: 26px;
-            }
-            .svc-grid,
-            .rev-grid,
-            .loan-grid-container {
-                grid-template-columns: 1fr;
-            }
-            .benefit-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .row2 {
-                grid-template-columns: 1fr;
-            }
-            .hero h3 {
-                font-size: 28px;
-            }
-            .shield img {
-                max-width: 100%;
-                height: auto;
-            }
-        }
-        @media (max-width: 768px) {
-            .brand .mark img {
-                margin-left: 0;
-                width: 150px;
-                height: auto;
-                max-height: 90px;
-            }
-            .nav {
-                padding: 14px 20px;
-            }
-        }
-        @media (max-width: 420px) {
-            .brand .mark img {
-                width: 120px;
-                max-height: 72px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -916,7 +22,7 @@
     <header>
         <nav class="nav wrap">
             <a href="#" class="brand">
-                <span class="mark"><img src="assets/images/logo.png" alt="Debt Resolve Xpert logo" /></span>
+                <span class="mark"><img src="assets/images/logo-bg.png" alt="Debt Resolve Xpert logo" /></span>
             </a>
             <div class="navlinks">
                 <a href="#home" class="active">Home</a>
@@ -927,7 +33,7 @@
                 <a href="#about">About Us</a>
             </div>
             <div class="navcta" style="display:flex; align-items:center; gap:12px;">
-                <a href="https://api.whatsapp.com/send/?phone=91XXXXXXXXXX&text&type=phone_number&app_absent=0" class="btn green" target="_blank">Get Support <i class="fas fa-arrow-right"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=919217344468&text&type=phone_number&app_absent=0" class="btn green" target="_blank">Get Support <i class="fas fa-arrow-right"></i></a>
                 <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
@@ -952,42 +58,118 @@
                 <p class="desc">Professional legal support to stop recovery-agent harassment, negotiate settlements, and protect your rights — all confidential and judgment-free.</p>
 
                 <div class="hero-mini-grid">
-                    <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=300&q=80" alt="harassed by recovery agents" /><span>Harassed by recovery agents?</span></div>
-                    <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=300&q=80" alt="legal threats" /><span>Facing legal threats &amp; notices?</span></div>
-                    <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&q=80" alt="loan default stress" /><span>Stress from loan defaults?</span></div>
-                    <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=300&q=80" alt="calls to family" /><span>Agents calling your family?</span></div>
-                    <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=300&q=80" alt="legal consultation" /><span>Talk to a legal expert</span></div>
-                    <div class="hero-mini-card"><img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=300&q=80" alt="debt-free future" /><span>Live a debt-free life!</span></div>
+                    <div class="hero-mini-card"><img src="assets/images/h1.png" alt="harassed by recovery agents" /><span>Harassed by recovery agents?</span></div>
+                    <div class="hero-mini-card"><img src="assets/images/h2.png" alt="legal threats" /><span>Facing legal threats &amp; notices?</span></div>
+                    <div class="hero-mini-card"><img src="assets/images/h3.png" alt="loan default stress" /><span>Stress from loan defaults?</span></div>
+                    <div class="hero-mini-card"><img src="assets/images/h4.png" alt="calls to family" /><span>Agents calling your family?</span></div>
+                    <div class="hero-mini-card"><img src="assets/images/h5.png" alt="legal consultation" /><span>Talk to a legal expert</span></div>
+                    <div class="hero-mini-card"><img src="assets/images/h6.png" alt="debt-free future" /><span>Live a debt-free life!</span></div>
                 </div>
             </div>
 
             <!-- form -->
             <div class="formcard" id="form">
                 <div class="form-title">Get Free Expert Consultation</div>
-                <div class="form-sub">Share your details and our legal team will reach out within 24 hours.
+
+                <div class="form-sub">
+                    Share your details and our legal team will reach out within 24 hours.
                     <b>We do not provide loans — we only assist with legal resolution &amp; harassment protection.</b>
                 </div>
-                <form onsubmit="event.preventDefault(); alert('Thank you! Our legal team will contact you within 24 hours.');">
-                    <div class="field"><label>Full Name*</label><input type="text" placeholder="Enter your name" required /></div>
-                    <div class="field"><label>Mobile Number*</label><input type="tel" placeholder="Enter 10 digit mobile number" required /></div>
-                    <div class="field"><label>Email ID*</label><input type="email" placeholder="Enter your email" required /></div>
-                    <div class="field"><label>City*</label>
-                        <select required><option value="">Select City</option><option>Delhi NCR</option><option>Mumbai</option><option>Pune</option><option>Bengaluru</option><option>Chennai</option><option>Hyderabad</option><option>Kolkata</option><option>Ahemdabad</option><option>Other</option></select>
+
+                <form id="consultationForm">
+
+                    <div class="field">
+                        <label>Full Name*</label>
+                        <input type="text" id="fullName" placeholder="Enter your name" required />
                     </div>
-                    <div class="field"><label>Employment Status*</label>
-                        <select required><option value="">Select Employment Status</option><option>Not Employed</option><option>Working as a Salaried Employee</option><option>Self Employed/Small Business</option><option>Business With More Than 10 Employees</option><option>Other</option></select>
+
+                    <div class="field">
+                        <label>Mobile Number*</label>
+                        <input type="tel" id="mobile" placeholder="Enter 10 digit mobile number" required />
                     </div>
-                    <div class="field"><label>Total Loan Amount*</label>
-                        <select required><option value="">Select Amount</option><option>Rs. 0-3 Lac</option><option>Rs. 3-10 Lac</option><option>Rs. 10-25 Lac</option><option>Rs. 25-50 Lac</option><option>Rs. 50 Lac-1 Cr</option><option>More than 1 Cr</option></select>
+
+                    <div class="field">
+                        <label>Email ID*</label>
+                        <input type="email" id="email" placeholder="Enter your email" required />
                     </div>
-                    <div class="field"><label>Type of Harassment*</label>
-                        <select required><option value="">Select Option</option><option>Recovery agent calls</option><option>Threats to family/office</option><option>Legal notices</option><option>Home/office visits</option><option>Other</option></select>
+
+                    <div class="field">
+                        <label>City*</label>
+                        <select id="city" required>
+                            <option value="">Select City</option>
+                            <option>Delhi NCR</option>
+                            <option>Mumbai</option>
+                            <option>Pune</option>
+                            <option>Bengaluru</option>
+                            <option>Chennai</option>
+                            <option>Hyderabad</option>
+                            <option>Kolkata</option>
+                            <option>Ahemdabad</option>
+                            <option>Other</option>
+                        </select>
                     </div>
-                    <div class="field"><label>Preferred Language*</label>
-                        <select required><option value="">Select Language</option><option>English</option><option>Hindi</option><option>Bengali</option><option>Odia</option><option>Assamese</option><option>Malyalam</option></select>
+
+                    <div class="field">
+                        <label>Employment Status*</label>
+                        <select id="employment" required>
+                            <option value="">Select Employment Status</option>
+                            <option>Not Employed</option>
+                            <option>Working as a Salaried Employee</option>
+                            <option>Self Employed/Small Business</option>
+                            <option>Business With More Than 10 Employees</option>
+                            <option>Other</option>
+                        </select>
                     </div>
-                    <div class="field"><label>Tell us about your situation*</label><textarea placeholder="Briefly describe your debt or harassment issue..." required></textarea></div>
-                    <button class="submit-btn" type="submit">Submit &amp; Get Help Now</button>
+
+                    <div class="field">
+                        <label>Total Loan Amount*</label>
+                        <select id="loanAmount" required>
+                            <option value="">Select Amount</option>
+                            <option>Rs. 0-3 Lac</option>
+                            <option>Rs. 3-10 Lac</option>
+                            <option>Rs. 10-25 Lac</option>
+                            <option>Rs. 25-50 Lac</option>
+                            <option>Rs. 50 Lac-1 Cr</option>
+                            <option>More than 1 Cr</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Type of Harassment*</label>
+                        <select id="harassment" required>
+                            <option value="">Select Option</option>
+                            <option>Recovery agent calls</option>
+                            <option>Threats to family/office</option>
+                            <option>Legal notices</option>
+                            <option>Home/office visits</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Preferred Language*</label>
+                        <select id="language" required>
+                            <option value="">Select Language</option>
+                            <option>English</option>
+                            <option>Hindi</option>
+                            <option>Bengali</option>
+                            <option>Odia</option>
+                            <option>Assamese</option>
+                            <option>Malyalam</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Tell us about your situation*</label>
+                        <textarea id="situation"
+                            placeholder="Briefly describe your debt or harassment issue..."
+                            required></textarea>
+                    </div>
+
+                    <button class="submit-btn" type="submit">
+                        Submit &amp; Get Help Now
+                    </button>
+
                 </form>
             </div>
         </div>
@@ -1025,33 +207,77 @@
                 <h3>Our Services</h3>
                 <p>Confidential, professional, and effective assistance to help you overcome debt challenges and protect your rights.</p>
             </div>
+
             <div class="svc-grid">
+
+                <!-- Credit Card Debt Resolution -->
                 <div class="svc-card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Cheque Bounce Consultation" />
-                    <div class="content"><div class="icon"><i class="fas fa-file-signature"></i></div><h5>Cheque Bounce Consultation</h5><p>Expert legal guidance for cheque bounce matters under applicable laws. We assist in notice drafting, case handling, and protecting your financial and legal interests effectively.</p></div>
+                    <img src="assets/images/service1.png" alt="Credit Card Debt Resolution" />
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-credit-card"></i></div>
+                        <h5>Credit Card Debt Resolution</h5>
+                        <p>Professional assistance for managing outstanding credit card debt, recovery pressure, settlements, and repayment disputes while protecting your legal and financial interests.</p>
+                    </div>
                 </div>
+
+                <!-- Personal Loan Settlement -->
                 <div class="svc-card">
-                    <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=500&q=80" alt="Arbitration and Mediation" />
-                    <div class="content"><div class="icon"><i class="fas fa-balance-scale"></i></div><h5>Arbitration &amp; Mediation</h5><p>Resolve disputes through structured negotiation and legal mediation. Our experts represent your interests to achieve fair settlements without prolonged litigation.</p></div>
+                    <img src="assets/images/service2.png" alt="Personal Loan Settlement" />
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h5>Personal Loan Settlement</h5>
+                        <p>Expert guidance for personal loan defaults and settlement matters. We help negotiate practical solutions and reduce financial pressure through proper legal channels.</p>
+                    </div>
                 </div>
+
+                <!-- Multiple Loan Management -->
                 <div class="svc-card">
-                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=500&q=80" alt="Anti-Harassment Services" />
-                    <div class="content"><div class="icon"><i class="fas fa-shield-alt"></i></div><h5>Anti-Harassment Services</h5><p>Legal support to stop unlawful recovery calls and intimidation. We ensure your rights are protected while addressing lender concerns through proper legal channels.</p></div>
+                    <img src="assets/images/service3.png" alt="Multiple Loan Management" />
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-tasks"></i></div>
+                        <h5>Multiple Loan Management</h5>
+                        <p>Strategic assistance for individuals managing multiple loans and creditors. We help organize repayment issues, handle recovery concerns, and work toward manageable solutions.</p>
+                    </div>
                 </div>
+
+                <!-- Anti-Harassment Services -->
                 <div class="svc-card">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80" alt="Credit Card and Personal Loan Issue" />
-                    <div class="content"><div class="icon"><i class="fas fa-credit-card"></i></div><h5>Credit Card &amp; Personal Loan Issue</h5><p>Professional assistance for defaults, settlements, and repayment disputes. We help reduce financial pressure while safeguarding your legal standing.</p></div>
+                    <img src="assets/images/service4.png" alt="Anti-Harassment Services" />
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                        <h5>Anti-Harassment Services</h5>
+                        <p>Legal support to stop unlawful recovery calls and intimidation. We ensure your rights are protected while addressing lender concerns through proper legal channels.</p>
+                    </div>
                 </div>
+
+                <!-- Business Loan Issue -->
                 <div class="svc-card">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=500&q=80" alt="Business Loan Issue" />
-                    <div class="content"><div class="icon"><i class="fas fa-building"></i></div><h5>Business Loan Issue</h5><p>Strategic legal support for business loan defaults and recovery disputes. We work toward practical solutions that protect your operations and reputation.</p></div>
+                    <img src="assets/images/service5.png" alt="Business Loan Issue" />
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-building"></i></div>
+                        <h5>Business Loan Issue</h5>
+                        <p>Strategic legal support for business loan defaults and recovery disputes. We work toward practical solutions that protect your operations and reputation.</p>
+                    </div>
                 </div>
+
+                <!-- Credit Rebuild Program -->
                 <div class="svc-card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&q=80" alt="Credit Rebuild Program" />
-                    <div class="content"><div class="icon"><i class="fas fa-chart-line"></i></div><h5>Credit Rebuild Program</h5><p>Structured guidance to improve credit profile after settlement. We help you rebuild financial credibility with planned legal and financial corrective steps.</p></div>
+                    <img src="assets/images/service6.png" alt="Credit Rebuild Program" />
+                    <div class="content">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h5>Credit Rebuild Program</h5>
+                        <p>Structured guidance to improve credit profile after settlement. We help you rebuild financial credibility with planned legal and financial corrective steps.</p>
+                    </div>
                 </div>
+
             </div>
-            <div class="center"><a href="#form" class="btn green">Get Callback from Our Experts <i class="fas fa-arrow-right"></i></a></div>
+
+            <div class="center">
+                <a href="#form" class="btn green">
+                    Get Callback from Our Experts
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -1171,7 +397,7 @@
     </footer>
 
     <!-- whatsapp -->
-    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/919217344468" class="whatsapp-float" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
     <!-- consultant bar -->
     <div class="fixed-consultant-bar"><a href="#form">Get Consultant</a></div>
@@ -1210,6 +436,51 @@
             });
         });
     </script>
+    
+<script>
+document.getElementById("consultationForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // WhatsApp number
+    const whatsappNumber = "919217344468";
+
+    // Get form values
+    const fullName = document.getElementById("fullName").value;
+    const mobile = document.getElementById("mobile").value;
+    const email = document.getElementById("email").value;
+    const city = document.getElementById("city").value;
+    const employment = document.getElementById("employment").value;
+    const loanAmount = document.getElementById("loanAmount").value;
+    const harassment = document.getElementById("harassment").value;
+    const language = document.getElementById("language").value;
+    const situation = document.getElementById("situation").value;
+
+    // WhatsApp message
+    const message =
+`*New Free Expert Consultation*
+
+*Full Name:* ${fullName}
+*Mobile Number:* ${mobile}
+*Email ID:* ${email}
+*City:* ${city}
+*Employment Status:* ${employment}
+*Total Loan Amount:* ${loanAmount}
+*Type of Harassment:* ${harassment}
+*Preferred Language:* ${language}
+
+*Situation:*
+${situation}
+
+Please contact me regarding my debt/legal issue.`;
+
+    // Encode message for WhatsApp
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+});
+</script>
 
 </body>
 </html>
